@@ -1,0 +1,631 @@
+/**********************************************************
+  Reset Default Properties Start
+**********************************************************/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: 0 0 .4rem rgba(0, 0, 0, 0.288) inset;
+    background-color: var(--white);
+    border-radius: 5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--red);
+    border-radius: 7rem;
+}
+
+
+html {
+  font-size: 62.5%;
+  /* Now 1rem = 1em = 10px */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body{
+  overflow: hidden;
+}
+
+
+/**********************************************************
+  Reset Default Properties End
+**********************************************************/
+
+
+/**********************************************************
+  Variables Start
+**********************************************************/
+:root {
+
+  /* Theme Colors */
+  --red: #ff4d42;
+  --blue: #030d42;
+  --white: #fff;
+  --black: #000;
+
+  /* Theme Fonts */
+  --font-family-1: tahoma, arial, verdana;
+}
+
+/**********************************************************
+  Variables End
+**********************************************************/
+
+
+/**********************************************************
+  Common Properties to Frequently Used Elements Start
+**********************************************************/
+body {
+  font-family: var(--font-family-1);
+  text-transform: capitalize;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family-1);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all .3s linear;
+}
+
+img {
+  display: inline-block;
+}
+
+input,
+textarea {
+  background-color: transparent;
+  outline: none;
+  font-size: 1.4rem;
+  font-family: var(--font-family-1);
+  color: var(--black);
+}
+
+::placeholder {
+  color: var(--black);
+}
+
+p {
+  font-size: 1.4rem;
+  color: var(--black);
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+/**********************************************************
+    Common Properties to Frequently Used Elements End
+**********************************************************/
+
+
+
+/**********************************************************
+  Frequently Used Components In This Website Start
+**********************************************************/
+
+/**********************************************************
+  Section Header For All Sections Start
+**********************************************************/
+.section-header {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.section-header h1 {
+  color: var(--blue);
+  font-size: 3.5rem;
+  text-transform: u;
+}
+
+.section-header span {
+  font-size: 5rem;
+  position: relative;
+  top: -20px;
+  color: var(--blue);
+  display: inline-block;
+  transition: all 0.8s linear;
+}
+
+.section-header span::before,
+.section-header span::after {
+  content: "";
+  position: absolute;
+  left: -267%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6rem;
+  height: 5px;
+  background-color: var(--red);
+}
+
+.section-header span::after {
+  left: initial;
+  right: -267%;
+}
+
+/**********************************************************
+Frequently Used Components In This Website End
+**********************************************************/
+
+
+/***********************************************************************************************
+  Actual Document Styling Start
+***********************************************************************************************/
+
+
+/**********************************************************
+  Styling Position Fixed Elements Start
+**********************************************************/
+
+/**********************************************************
+  Styling Position Fixed Elements End
+**********************************************************/
+
+
+/**********************************************************
+  Wrapper Start
+**********************************************************/
+.wrapper {
+  width: 100vw;
+  height: auto;
+}
+
+/**********************************************************
+  Header Start
+**********************************************************/
+header {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 5rem;
+}
+
+/**********************************************************
+  Navbar Start
+**********************************************************/
+.navbar {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.144);
+}
+
+/**********************************************************
+  Logo Start
+**********************************************************/
+.logo-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo-box .logo-image {
+  width: 100px; /* Adjust the size as needed */
+  height: 100px;
+  border-radius: 0.5rem; /* Optional: Slight rounding for the logo */
+  position: relative; /* Needed for the pseudo-element positioning */
+}
+
+.logo-box .logo-image::after {
+  position: absolute;
+  content: "";
+  width: 30%; /* Width of the decorative bar */
+  height: 0.8rem; /* Height of the decorative bar */
+  border-radius: 1rem; /* Smooth edges for the bar */
+  background-color: var(--red); /* Replace with your desired color */
+  bottom: -10%; /* Position slightly below the logo */
+  left: 50%; /* Center align horizontally */
+  transform: translateX(-50%);
+}
+
+
+/**********************************************************
+  Menubar Start
+**********************************************************/
+.menubar ul li a {
+  color: var(--black);
+  font-size: 1.8rem;
+}
+
+.menubar ul li {
+  padding: 1rem 2rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.menubar ul li::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 4px;
+  background-color: var(--red);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s linear;
+}
+
+@media (hover:hover) {
+
+  .menubar ul li:hover::after,
+  .menubar ul li:first-child::after {
+    width: 70%;
+  }
+}
+
+/**********************************************************
+  Search Box Start
+**********************************************************/
+.search-box {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 1.8rem;
+  padding: 0.5rem 1rem;
+}
+
+.search-box input {
+  border: none;
+}
+
+.search-box img {
+  width: 2.4rem;
+  cursor: pointer;
+}
+
+/**********************************************************
+  Toggle Button On Mobiles Start
+**********************************************************/
+.toggle {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  border: 2px solid var(--black);
+  border-radius: 5px;
+  font-size: 3rem;
+  justify-content: center;
+  font-weight: bold;
+  display: none;
+}
+
+#checkbox {
+  display: none;
+}
+
+#checkbox:checked+.menubar {
+  transform: translateX(0);
+}
+
+/**********************************************************
+  Banner Section Start
+**********************************************************/
+
+/**********************************************************
+  Banner Left Start
+**********************************************************/
+.banner-left {
+  width: 40%;
+}
+
+.banner-left h1 {
+  color: var(--blue);
+  font-size: 3.3rem;
+  margin-bottom: 1.8rem;
+}
+
+.banner-left h1::after {
+  content: "";
+  color: var(--red);
+  font-size: 4rem;
+  text-transform: capitalize;
+  animation: change-content 10s linear infinite;
+}
+
+
+.banner-left p {
+  margin-bottom: 2rem;
+}
+
+.banner-left button:not(:last-child) {
+  margin-right: 1.5rem;
+}
+
+/**********************************************************
+  Banner Right Start
+**********************************************************/
+.banner-right {
+  width: 50%;
+  padding-top: 10rem;
+}
+
+.banner-right img {
+  width: 100%;
+}
+
+/**********************************************************
+  Banner Section End
+**********************************************************/
+
+/**********************************************************
+  Header End
+**********************************************************/
+
+/**********************************************************
+  Services Section Start
+**********************************************************/
+
+/**********************************************************
+  Services Boxes
+**********************************************************/
+/* Container for the service columns */
+.service-container {
+  display: flex;
+  flex-wrap: wrap; /* Ensures responsiveness */
+  justify-content: space-between; /* Space between the boxes */
+  gap: 1rem; /* Optional spacing between boxes */
+  padding: 1rem;
+}
+
+.service-col {
+  flex: 1 1 calc(33.333% - 1rem); /* Each box takes 1/3rd width with space */
+  max-width: calc(33.333% - 1rem);
+  padding: 1.2rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: auto;
+  text-align: center;
+  transition: all 0.3s linear;
+}
+
+/* Hover effect */
+@media (hover: hover) {
+  .service-col:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+  }
+}
+
+.service-col-img-box {
+  margin: auto;
+  margin-bottom: 2rem;
+  width: 7rem;
+  height: 7rem;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-col-img-box img {
+  width: 55%;
+}
+
+.service-col h2 {
+  font-size: 2rem;
+  color: var(--blue);
+  margin-bottom: 1rem;
+}
+
+.service-col p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-col {
+    flex: 1 1 calc(50% - 1rem); /* 2 columns on tablets */
+    max-width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .service-col {
+    flex: 1 1 100%; /* Stacks boxes on small screens */
+    max-width: 100%;
+  }
+}
+
+
+
+/**********************************************************
+  Services Section End
+**********************************************************/
+
+
+/**********************************************************
+  About Section Start
+**********************************************************/
+
+/**********************************************************
+  About Left
+**********************************************************/
+.about-left {
+  width: 50%;
+}
+
+.about-left img {
+  width: 100%;
+}
+
+/**********************************************************
+  About Right
+**********************************************************/
+.about-right {
+  padding-top: 2rem;
+  width: 40%;
+  text-align: right;
+}
+
+.about-right h2 {
+  color: var(--red);
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+/**********************************************************
+  About Section End
+**********************************************************/
+
+
+/**********************************************************
+  Galleery Section Start
+**********************************************************/
+.gallery-box {
+  width: 100%; /* Ensure full width on small screens */
+  max-width: 30%; /* Limit width on larger screens */
+  margin-bottom: 1rem;
+  border-radius: 5rem;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  
+  /* Fallback for aspect ratio */
+  position: relative; /* Required for padding trick */
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (9/16 * 100) */
+  height: auto;
+  aspect-ratio: 16 / 9; /* Modern browsers */
+}
+
+.gallery-box img,
+.gallery-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures content scales properly within the box */
+  position: absolute; /* Positioning for padding fallback */
+  top: 0;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .gallery-box {
+    max-width: 100%; /* Full width on smaller screens */
+    margin-bottom: 2rem; /* Adjust spacing for smaller screens */
+  }
+}
+
+@media (hover:hover) {
+  .gallery-box:hover {
+    transform: scale(1.03); /* Slight scale effect on hover */
+  }
+}
+
+
+
+
+
+
+/**********************************************************
+  Galleery Section End
+**********************************************************/
+
+
+/**********************************************************
+  Contact Section Start
+**********************************************************/
+#contact {
+  text-align: center;
+}
+
+#contact>h1 {
+  color: var(--blue);
+  margin-bottom: 2rem;
+  text-align: left;
+  font-size: 3rem;
+}
+
+.contact-row input,
+.contact-row textarea {
+  width: 49%;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 2px solid var(--blue);
+}
+
+.contact-row textarea {
+  margin-top: 2rem;
+  width: 100%;
+  resize: vertical;
+}
+
+/**********************************************************
+  Contact Section End
+**********************************************************/
+
+
+/**********************************************************
+  Footer Start
+**********************************************************/
+footer {
+  padding: 2rem 0;
+  background-color: var(--blue);
+  text-align: center;
+}
+
+footer h1 {
+  font-size: 2.5rem;
+  color: var(--red);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+footer p {
+  font-size: 1.2rem;
+  color: var(--white);
+}
+
+/**********************************************************
+  Footer End
+**********************************************************/
+
+
+/**********************************************************
+  Keyframes For Animations Start
+**********************************************************/
+
+/**********************************************************
+  Keyframes For Change Banner Heading Content
+**********************************************************/
+
+@keyframes change-content {
+  40% {
+    content: "You plan";
+  }
+
+  60% {
+    content: "We grow";
+  
+  }
+}
+
+/**********************************************************
+  Keyframes For Animations End
+**********************************************************/
+
+
+/***********************************************************************************************
+  Actual Document Styling End
+***********************************************************************************************/
